@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg: #f5fbff;
+  --bg-blue: #eaf6ff;
+  --ice: #d8efff;
+  --light-blue: #a8d8f5;
+  --blue: #5ca9dc;
+  --primary: #2f83bd;
+  --navy: #123d67;
+  --deep-navy: #0d3155;
+  --orange: #ffc46b;
+  --white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 20% 20%, #dff2ff 0, transparent 30%),
+    radial-gradient(circle at 85% 35%, #e8f6ff 0, transparent 32%),
+    #f5fbff;
+  color: var(--navy);
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+
+html[dir="ltr"] body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--light-blue);
+  color: var(--deep-navy);
+}
+
+.pixel {
+  image-rendering: pixelated;
+}
+
+.pixel-shadow {
+  box-shadow:
+    5px 0 0 rgba(92, 169, 220, 0.18),
+    0 5px 0 rgba(92, 169, 220, 0.12);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(92, 169, 220, 0.25);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.float {
+  animation: floating 5s ease-in-out infinite;
+}
+
+.float-slow {
+  animation: floating 8s ease-in-out infinite reverse;
+}
+
+.blink {
+  animation: blink 1s steps(2) infinite;
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .float,
+  .float-slow,
+  .blink {
+    animation: none;
+  }
+}
