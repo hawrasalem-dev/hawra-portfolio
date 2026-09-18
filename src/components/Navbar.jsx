@@ -2,7 +2,6 @@ import { useState } from "react"
 
 function Navbar({ language, setLanguage, t }) {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [darkMode, setDarkMode] = useState(false)
 
   const links = [
     { label: t.nav.home, href: "#home" },
@@ -58,33 +57,6 @@ function Navbar({ language, setLanguage, t }) {
 
         {/* Controls */}
         <div className="flex shrink-0 items-center gap-2">
-
-          {/* Theme switch */}
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            aria-label="Toggle theme"
-            className="hidden h-10 items-center gap-1 rounded-full border border-[#A8D8F5] bg-[#F5FBFF] p-1 sm:flex"
-          >
-            <span
-              className={`flex h-8 w-8 items-center justify-center rounded-full text-base transition ${
-                !darkMode
-                  ? "bg-white text-[#2F83BD] shadow-sm"
-                  : "text-[#5CA9DC]"
-              }`}
-            >
-              ☼
-            </span>
-
-            <span
-              className={`flex h-8 w-8 items-center justify-center rounded-full text-base transition ${
-                darkMode
-                  ? "bg-[#D8EFFF] text-[#123D67] shadow-sm"
-                  : "text-[#5CA9DC]"
-              }`}
-            >
-              ☾
-            </span>
-          </button>
 
           {/* Language */}
           <button
